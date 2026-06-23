@@ -1,0 +1,36 @@
+/* Create Lead action — primary gold, not default Ant blue */
+.calls-create-lead-link.ant-btn-link {
+  color: var(--primary-color) !important;
+  padding: 0 4px;
+}
+
+.calls-create-lead-link.ant-btn-link:hover,
+.calls-create-lead-link.ant-btn-link:focus {
+  color: var(--primary-color) !important;
+  opacity: 0.88;
+}
+
+.calls-create-lead-link.ant-btn-link .anticon {
+  color: inherit;
+}
+
+.calls-toolbar {
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.calls-toolbar__search {
+  min-width: 240px;
+  max-width: 320px;
+}
+
+@media (max-width: 768px) {
+  .calls-toolbar {
+    justify-content: stretch;
+  }
+
+  .calls-toolbar__search {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
