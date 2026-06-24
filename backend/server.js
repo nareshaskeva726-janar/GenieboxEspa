@@ -53,8 +53,8 @@ const getCorsOrigins = () => {
   // origins.push('https://e-spa.askeva.net')
   // origins.push('http://e-spa.askeva.net')
 
-   origins.push('https://espacrm.in')
-   origins.push('http://espacrm.in')
+   origins.push('https://genie-lead.askeva.io')
+   origins.push('https://genie-lead.askeva.io')
   
   // Add production frontend URL from environment variable
   if (process.env.PRODUCTION_FRONTEND_URL) {
