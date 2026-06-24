@@ -441,7 +441,7 @@ body {
 }
 
 [data-theme='dark'] .ant-breadcrumb a:hover {
-  color: #f0d060 !important;
+  color: var(--primary-hover) !important;
 }
 
 [data-theme='dark'] .ant-breadcrumb-separator {
