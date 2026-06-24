@@ -29,11 +29,11 @@ import { useAuth } from '../context/AuthContext'
 import { hasPermission, isSuperAdmin } from '../utils/permissions'
 import { useResponsive } from '../hooks/useResponsive'
 import { useLogoutMutation, useChangePasswordMutation, useGetMeQuery } from '../store/api/authApi'
-import { 
-  useGetRecentNotificationsQuery, 
-  useMarkAsReadMutation, 
-  useMarkAllAsReadMutation, 
-  useClearAllNotificationsMutation 
+import {
+  useGetRecentNotificationsQuery,
+  useMarkAsReadMutation,
+  useMarkAllAsReadMutation,
+  useClearAllNotificationsMutation
 } from '../store/api/notificationApi'
 import dayjs from 'dayjs'
 import { useThemeMode } from '../hooks/useThemeMode'
@@ -64,7 +64,7 @@ const Layout = ({ children }) => {
   const [showChangePasswordForm, setShowChangePasswordForm] = useState(false)
   const [changePasswordForm] = Form.useForm()
   const [notificationVisible, setNotificationVisible] = useState(false)
-  
+
   // Notification hooks
   const { data: notificationsData, refetch: refetchNotifications } = useGetRecentNotificationsQuery(undefined, {
     pollingInterval: 30000, // Poll every 30 seconds
@@ -72,15 +72,15 @@ const Layout = ({ children }) => {
   const [markAsRead] = useMarkAsReadMutation()
   const [markAllAsRead] = useMarkAllAsReadMutation()
   const [clearAllNotifications] = useClearAllNotificationsMutation()
-  
+
   const notifications = notificationsData?.notifications || []
   const unreadCount = notificationsData?.unreadCount || 0
-  
+
   // Fetch fresh user data when profile drawer opens
   const { data: currentUserData, refetch: refetchUser } = useGetMeQuery(undefined, {
     skip: !profileDrawerVisible, // Only fetch when drawer is open
   })
-  
+
   // Update user data when fresh data is fetched
   useEffect(() => {
     if (profileDrawerVisible && currentUserData?.success && currentUserData?.user) {
@@ -102,13 +102,13 @@ const Layout = ({ children }) => {
       login(freshUserData)
     }
   }, [profileDrawerVisible, currentUserData, login, user?.permissions])
-  
+
   // Use fresh user data from API if available, otherwise fall back to context user
-  const displayUser = currentUserData?.success && currentUserData?.user 
+  const displayUser = currentUserData?.success && currentUserData?.user
     ? {
-        ...currentUserData.user,
-        permissions: currentUserData.user.permissions || user?.permissions || {},
-      }
+      ...currentUserData.user,
+      permissions: currentUserData.user.permissions || user?.permissions || {},
+    }
     : user
   const assignedBranches = Array.isArray(displayUser?.branches) ? displayUser.branches : []
   const visibleBranchList =
@@ -315,14 +315,20 @@ const Layout = ({ children }) => {
       {/* Only show logo in sidebar when NOT using drawer (desktop fixed sidebar) */}
       {!useDrawer && (
         <div className="app-sidebar-logo">
+          
           {collapsed ? (
-            <span className="app-sidebar-logo-letter">E</span>
-          ) : (
             <img
-              src={isDark ? '/espalogo.png' : '/whiteespa.png'}
-              alt="ESPA Logo"
+              src={isDark ? '/GBLogo.jpeg' : '/GBLogo.jpeg'}
+              alt="Geniebox Logo"
               className="app-sidebar-logo-img"
             />
+          ) : (
+            <img
+              src={isDark ? '/GB.jpeg' : '/GB.jpeg'}
+              alt="Geniebox Logo"
+              className="app-sidebar-logo-img"
+            />
+
           )}
           <span className="app-sidebar-logo-fallback">ESPA CRM</span>
         </div>
@@ -335,6 +341,8 @@ const Layout = ({ children }) => {
         onClick={handleMenuClick}
         className="app-sidebar-menu"
       />
+
+
     </>
   )
 
@@ -342,7 +350,7 @@ const Layout = ({ children }) => {
     <AntLayout style={{ minHeight: '100vh' }}>
       {useDrawer ? (
         <Drawer
-          title={<img src={isDark ? '/espalogo.png' : '/whiteespa.png'} alt="ESPA Logo" className="app-drawer-logo" />}
+          title={<img src={isDark ? '/GB.jpeg' : '/GB.jpeg'} alt="GenieBox Logo" className="app-drawer-logo" />}
           placement="left"
           onClose={() => setMobileMenuVisible(false)}
           open={mobileMenuVisible}
@@ -375,10 +383,10 @@ const Layout = ({ children }) => {
           {sidebarContent}
         </Sider>
       )}
-      <AntLayout 
+      <AntLayout
         className="main-layout-content"
-        style={{ 
-          marginLeft: useDrawer ? 0 : (collapsed ? 80 : 250), 
+        style={{
+          marginLeft: useDrawer ? 0 : (collapsed ? 80 : 250),
           transition: 'all 0.2s',
           minHeight: '100vh',
           width: '100%',
@@ -525,7 +533,7 @@ const Layout = ({ children }) => {
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: isMobile ? 4 : 8, cursor: 'pointer' }}>
                 <Avatar
-                  src="/user.png"
+                  src={isDark ? "/UserPink.png" : "/userPinkLight.png"}
                   size={isMobile ? 'small' : 'default'}
                   icon={<UserOutlined />}
                   onError={() => true}

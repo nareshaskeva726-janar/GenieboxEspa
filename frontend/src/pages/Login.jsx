@@ -87,7 +87,7 @@ const Login = () => {
       <Card className="login-card">
         <div className="login-page__logo-wrap">
           <img
-            src={isDark ? '/espalogo.png' : '/whiteespa.png'}
+            src={isDark ? '/GB.jpeg' : '/GB.jpeg'}
             alt="ESPA International Logo"
             className="login-page__logo"
           />

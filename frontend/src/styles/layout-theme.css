@@ -10,7 +10,8 @@
   border-bottom: 1px solid var(--border-color);
   position: sticky;
   top: 0;
-  z-index: 99;
+  left: 0;
+  z-index: 1;
   box-sizing: border-box;
 }
 
@@ -153,7 +154,7 @@
 [data-theme='light'] .app-sidebar-menu.ant-menu-light .ant-menu-item-selected:hover .anticon {
   background-color: var(--primary-color) !important;
   color: #ffffff !important;
-  filter: brightness(1.06);
+  /* filter: brightness(1.06); */
 }
 
 [data-theme='dark'] .app-sidebar-menu .ant-menu-item-selected {
@@ -179,7 +180,8 @@
 .app-sidebar-logo-img {
   max-width: 100%;
   transform: scale(1.8);
-  max-height: 50px;
+  max-height: 40px;
+  border-radius: 2px;
   object-fit: contain;
 }
 
@@ -197,6 +199,7 @@
   max-height: 40px;
   object-fit: contain;
   transform: scale(1.2);
+  border-radius: 2px;
 }
 
 /* ----- Profile drawer (portal — uses html [data-theme] variables) ----- */
@@ -317,7 +320,7 @@
   color: var(--text-secondary);
 }
 
-.profile-drawer__form .ant-form-item-label > label {
+.profile-drawer__form .ant-form-item-label>label {
   color: var(--text-secondary);
 }
 
@@ -431,6 +434,12 @@
   font-size: 16px;
   font-weight: 600;
 }
+
+/* [data-theme="dark"] .app-notification-popover__heading {
+  color: var(--accent-gold);
+  font-size: 16px;
+  font-weight: 600;
+} */
 
 .app-notification-popover__actions .ant-btn {
   color: var(--accent-gold);

@@ -34,11 +34,14 @@
 .login-page__logo-wrap {
   text-align: center;
   margin-bottom: 32px;
+  margin-top: 32px;
+
 }
 
 .login-page__logo {
   max-width: 200px;
   max-height: 100px;
+  border-radius: 4px;
   transform: scale(1.2);
   margin-bottom: 16px;
   object-fit: contain;
