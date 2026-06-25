@@ -185,6 +185,11 @@
   object-fit: contain;
 }
 
+.ant-drawer .ant-drawer-header {
+  background-color: var(--bg-color);
+}
+
+
 /* [data-theme='light'] .app-sidebar-logo-img {
   max-height: 100px;
 } */
