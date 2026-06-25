@@ -507,7 +507,7 @@ body {
 
 [data-theme='dark'] .ant-dropdown-menu-item:hover {
   background: #2a2a2a !important;
-  color: #d4af37 !important;
+  color: var(--primary-color) !important;
 }
 
 [data-theme='dark'] .ant-dropdown-menu-item-disabled {

@@ -23,7 +23,7 @@ import {
   SunOutlined,
   MoonOutlined,
 } from '@ant-design/icons'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, color, motion } from 'framer-motion'
 import { useNavigate, useLocation, Link } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { hasPermission, isSuperAdmin } from '../utils/permissions'
@@ -315,7 +315,7 @@ const Layout = ({ children }) => {
       {/* Only show logo in sidebar when NOT using drawer (desktop fixed sidebar) */}
       {!useDrawer && (
         <div className="app-sidebar-logo">
-          
+
           {collapsed ? (
             <img
               src={isDark ? '/GBLogo.jpeg' : '/GBLogo.jpeg'}
