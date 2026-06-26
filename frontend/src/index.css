@@ -394,7 +394,7 @@ body {
 }
 
 [data-theme='dark'] .ant-modal-title {
-  color: #d4af37 !important;
+  color: var(--primary-color) !important;
 }
 
 [data-theme='light'] .ant-modal-title {
