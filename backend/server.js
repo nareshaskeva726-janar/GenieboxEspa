@@ -294,7 +294,7 @@ const seedSuperAdminIfNeeded = async () => {
     const superAdmin = new User({
       name: 'Super Admin',
       email: 'superadmin@gmail.com',
-      password: '123456',
+      password: '#Geniebox12345',
       role: 'superadmin',
       status: 'active',
       phone: '',
@@ -303,7 +303,7 @@ const seedSuperAdminIfNeeded = async () => {
     await superAdmin.save()
     console.log('✅ Super admin created successfully!')
     console.log('📧 Email: superadmin@gmail.com')
-    console.log('🔑 Password: 123456')
+    console.log('🔑 Password: #Geniebox12345')
   } catch (error) {
     console.error('❌ Error seeding super admin:', error.message)
     // Don't exit - let server start even if seeding fails

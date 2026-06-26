@@ -102,7 +102,7 @@ const seedSuperAdmin = async (force = false) => {
     const superAdmin = new User({
       name: 'Super Admin',
       email: 'superadmin@gmail.com',
-      password: '123456',
+      password: '#Geniebox12345',
       role: 'superadmin',
       status: 'active',
       phone: '',
@@ -111,7 +111,7 @@ const seedSuperAdmin = async (force = false) => {
     await superAdmin.save()
     console.log('✅ Super admin created successfully!')
     console.log('📧 Email: superadmin@gmail.com')
-    console.log('🔑 Password: 123456')
+    console.log('🔑 Password: #Geniebox12345')
 
     await mongoose.connection.close()
     process.exit(0)
